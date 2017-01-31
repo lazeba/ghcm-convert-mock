@@ -1,6 +1,5 @@
 package com.thomascook;
 
-import com.google.common.collect.Sets;
 import com.thomascook.payload.ChcRequestPayload;
 import com.thomascook.payload.ChcResponseBody;
 import com.thomascook.payload.ChcResponsePayload;

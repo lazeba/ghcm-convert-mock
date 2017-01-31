@@ -5,12 +5,14 @@ import com.typesafe.config.ConfigFactory;
 import io.github.tcdl.msb.api.MsbContext;
 import io.github.tcdl.msb.api.MsbContextBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * @author Alexandr Zolotov
  */
 @Configuration
+@ComponentScan
 public class MockConfig {
 
     @Bean
