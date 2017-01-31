@@ -93,7 +93,7 @@
 
         <dependency>
             <groupId>io.github.tcdl.msb</groupId>
-            <artifactId>msb-java</artifactId>
+            <artifactId>msb-java-core</artifactId>
             <version>1.6.0</version>
         </dependency>
 
