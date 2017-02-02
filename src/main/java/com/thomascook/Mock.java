@@ -36,16 +36,16 @@ public class Mock {
         responsesSet.addAll(responses);
 
         msbContext.getObjectFactory().createResponderServer(namespace, ResponderOptions.DEFAULTS, (request, responderContext) -> {
-            responderContext
-                    .getResponder()
-                    .send(new ChcResponsePayload(new ChcResponseBody(responsesSet)));
 
-
-            //uncomment to simulate immediate failure detection
-//            responderContext
-//                    .getResponder()
-//                    .sendAck(0,0);
-
+            if ("40867".equals(request.getBody().getCodeValue()) && "1".equals(request.getBody().getSourceCodeTypeID())) {
+                responderContext
+                        .getResponder()
+                        .send(new ChcResponsePayload(new ChcResponseBody(responsesSet)));
+            } else {
+                responderContext
+                        .getResponder()
+                        .sendAck(0, 0);
+            }
         }, ChcRequestPayload.class).listen();
     }
 
